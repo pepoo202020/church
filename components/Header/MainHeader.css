@@ -1,0 +1,44 @@
+header {
+  background-color: #053762;
+  max-width: 100vw;
+  width: 100vw;
+  overflow: hidden;
+  color: white;
+  position: sticky;
+  top: 0;
+  right: 0;
+}
+.sliding_header_container {
+  @apply flex flex-col items-start justify-between;
+}
+
+.sliding_header_container_btn {
+  @apply bg-transparent;
+  @apply hover:bg-transparent;
+}
+
+.slided_header_component {
+  @apply bg-[#053762];
+}
+
+.image_container:hover .image {
+  opacity: 0.3;
+  transition: all 0.7s ease-in;
+}
+
+.image_container:hover .line {
+  animation: lineAnimate 0.8s linear;
+  width: 100%;
+}
+
+@keyframes lineAnimate {
+  0% {
+    width: 20px;
+  }
+  50% {
+    width: 50%;
+  }
+  100% {
+    width: 100%;
+  }
+}
