@@ -42,3 +42,7 @@ header {
     width: 100%;
   }
 }
+
+.header_logo {
+  transform: scaleX(-1);
+}
