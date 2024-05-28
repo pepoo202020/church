@@ -1,10 +1,12 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
 export const SlidedHeader = () => {
-  const [dialyVerse, setDialyVerse] = useState("");
+  const [dialyVerse, setDialyVerse] = useState(
+    "لأن الرب هو قاضينا ، والرب هو ناموسنا ، والرب ملكنا. هو الذي سيخلصنا. - إشعياء 33:22 (NIV)"
+  );
 
   const getDailyVerse = async () => {
     try {
@@ -54,14 +56,19 @@ export const SlidedHeader = () => {
   };
   getDailyVerse().then(translateToArabic);
 
+  console.log(dialyVerse);
+
   return (
     <div className="w-screen max-w-[100vw] p-5 h-[410px] flex flex-col lg:flex-row  items-center justify-center lg:gap-[172px]">
       <div className="flex flex-col items-center justify-center gap-[15px]  h-full p-2">
-        <h5 className="text-white text-[25px] font-bold leading-5 px-8">
+        <h5
+          className="text-white  text-[18px] lg:text-[25px] font-bold leading-5 px-8"
+          style={{ fontFamily: "Lemonada" }}
+        >
           المناسبة الكنسية الحالية
         </h5>
         <motion.div
-          className="image_container h-full w-full rounded-lg overflow-hidden flex items-center justify-center relative cursor-pointer"
+          className="image_container h-[200px] lg:h-full w-full rounded-lg overflow-hidden flex items-center justify-center relative cursor-pointer"
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, type: "spring" }}
@@ -76,7 +83,10 @@ export const SlidedHeader = () => {
             />
           </div>
           <div className="h-full w-full absolute gap-2 bg-black/25 top-0 z-10 flex flex-col items-center justify-center px-5">
-            <h1 className="text-[34px] leading-10 font-bold">
+            <h1
+              className="text-[34px] leading-10 font-bold"
+              style={{ fontFamily: "Gulzar" }}
+            >
               الخمسين المقدسة
             </h1>
             <div className="line bg-white h-1 w-5 rounded"></div>
@@ -87,17 +97,25 @@ export const SlidedHeader = () => {
         </motion.div>
       </div>
       <motion.div
-        className="w-fit h-full  p-5 flex flex-col items-start justify-start gap-2"
+        className="w-fit h-full  px-4 py-4 lg:py-12 flex flex-col items-start justify-start gap-2"
         initial={{ opacity: 0, x: -100 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1, type: "spring" }}
       >
-        <h1 className="font-medium text-[21px] leading-5">آية اليوم</h1>
+        <h1
+          className="font-medium text-[25px] leading-5 mb-2"
+          style={{ fontFamily: "Gulzar" }}
+        >
+          آية اليوم
+        </h1>
         {dialyVerse && dialyVerse.length > 0 && (
-          <>
+          <div
+            className="flex flex-col items-start justify-start gap-3"
+            style={{ fontFamily: "Alexandria" }}
+          >
             <p>{dialyVerse.split("-")[0]}</p>
             <p>{dialyVerse.split("-")[1].split("(NIV)")[0]}</p>
-          </>
+          </div>
         )}
       </motion.div>
     </div>

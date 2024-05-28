@@ -1,5 +1,4 @@
-@import url("https://fonts.cdnfonts.com/css/saint-george");
-
+@import url("https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=Cairo:wght@200..1000&family=Gulzar&family=Jomhuria&family=Lalezar&family=Lemonada:wght@300..700&family=Rakkas&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -74,6 +73,6 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: "Saint George", sans-serif;
+    font-family: "Cairo", sans-serif;
   }
 }
